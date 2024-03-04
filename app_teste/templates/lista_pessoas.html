@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Pessoas</title>
+</head>
+<body>
+
+<h1>Lista de Pessoas</h1>
+<hr>
+<a href="{% url 'Formulario' %}"> <button>Criar Pessoa</button></a>
+<hr>
+<div>
+    <form action={% url 'Pessoas' %} method="GET">
+
+        <label for="">Nome</label>
+        <input type="text" name="nome_filtrar">
+
+        <label for="">Idade</label>
+        <input type="text" name="idade_filtrar">
+        <br><br>
+
+        <input type="submit" value="Filtrar">
+
+    </form>
+</div>
+<hr>
+
+{% for p in pessoas %}
+
+<h3>Nome: <a href={% url 'Pessoa' p.id %}>{{p}}</a></h3>
+<h3>Idade: {{p.idade}}</h3>
+
+<hr>
+
+{% endfor %}
+
+
+</body>
+</html>

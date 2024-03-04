@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pessoa</title>
+</head>
+<body>
+
+<h1>{{pessoa.nome}}</h1>
+
+<h3>Idade: {{pessoa.idade}}</h3>
+
+{% if pessoa.vivo == 1 %}
+<h3>Está pessoa está viva!</h3>
+{% else %}
+<h3>Infelizmente, essa pessoa veio a óbito...</h3>
+{% endif %}
+
+<a href="{% url 'Deletar' pessoa.id %}"> <button>Excluir</button></a>
+
+</body>
+</html>
